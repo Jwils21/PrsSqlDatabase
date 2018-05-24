@@ -15,7 +15,10 @@ create table [User]
 	Lastname nvarchar(30) not null,
 	Phone nvarchar(12) not null,
 	Email nvarchar(255) not null,
-	IsReviewer Bit not null,
-	IsAdmin bit not null,
-	Active bit not null,
-	);
+	IsReviewer Bit not null default 0,
+	IsAdmin bit not null default 0,
+	Active bit not null default 1
+);
+	go
+create unique index uix_username on [user](username);
+go
